@@ -22,12 +22,9 @@ function App() {
   const handleClick=(e)=>{
     if(e.target.className.includes("btn")){
       blink(e.target);
-      console.log(userSelectedList);
-      console.log(gameSelectedList);
       userSelectedList.push(e.target.id)
       checkAnswer(userSelectedList,gameSelectedList,userSelectedList.length)
       if(userSelectedList.length===gameSelectedList.length){
-        console.log("hi");
         checkAnswer(userSelectedList,gameSelectedList,userSelectedList.length)
       }
    }
@@ -49,7 +46,6 @@ function App() {
         userSelectedList=[]
         var selectNumer=RandomBlink(colors)
         gameSelectedList.push(colors[selectNumer])
-        console.log(gameSelectedList);
         setLevel(1)
         setHeading("Level "+level)
         document.body.style.backgroundColor="#011F3F"
