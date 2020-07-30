@@ -6,6 +6,7 @@ import Box from "./Box"
 function App() {
 
   //const colors=["green", "red", "yellow", "blue"]
+  var gameSelectedList=[]
   var userSelectedList=[]
   useEffect(() => {
     document.addEventListener("keydown", selectedNumer);
@@ -17,15 +18,18 @@ function App() {
     };
   }, );
   const printNumber=(e)=>{
+
     if(e.target.className.includes("btn")){
-      userSelectedList.push(e.target.id)
-      console.log(userSelectedList);
+      e.target.className="fadeOut "+e.target.id+" btn"
+      setTimeout(()=>e.target.className="fadeIn "+e.target.id+" btn",100)
     };
 
   }
   const selectedNumer=(e)=>{
-
-    console.log(Math.floor(Math.random()*4));
+    if(e.key==="a"){
+      console.log(e.key);
+      console.log(Math.floor(Math.random()*4));
+  }
   }
   return (
     <div className="App">
